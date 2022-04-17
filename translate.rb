@@ -34,7 +34,7 @@ def sub_factory(file_name)
   subs = []
   buffer = []
   File.foreach(file_name) do |line|
-    if line == "\n"
+    if ["\n", "\r\n"].include?(line)
       subs << Sub.new(buffer)
       buffer = []
       next
