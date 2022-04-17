@@ -22,7 +22,9 @@ class Sub
 
   def zh_version
     out = "#{@place}\n#{@time}\n#{@line1_zh}\n"
-    out << "#{@line2_zh}\n" if @line2_zh
+    out << "#{@line2_zh || ' '}\n"
+    out << "#{@line1_en}\n"
+    out << "#{@line2_en || ' '}\n"
     out << "\n"
     out
   end
